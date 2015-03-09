@@ -1,0 +1,80 @@
+<html ng-app="blackjackapp">
+  <head>
+
+    <!-- ANGULAR -->
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!-- CHART.JS + ANGULAR CHART.JS -->
+    <!--<script src="bower_components/Chart.js/Chart.js"></script>-->
+    <!--<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>-->
+    <!--<link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">-->
+    <script src="bower_components/Chart.js/chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+
+    <!-- MOMENT TIME LIBRARY -->
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment-duration-format/lib/moment-duration-format.js"></script>
+
+    <!-- MAIN APP -->
+    <script src="app.js"></script>
+
+    <!-- UTILITY SCRIPTS -->
+
+    <!--NORMAL STRATEGY CONTROLLER-->
+    <script src="app/normal/ctrl.js"></script>
+    <script src="app/blackjack_sim/service.js"></script>
+
+    <!--HIGH LOW STRATEGY CONTROLLER-->
+    <script src="app/high_low/ctrl.js"></script>
+
+    <!--HIGH LOW STRATEGY CONTROLLER DIFFERENT BETS-->
+    <script src="app/high_low_bets/ctrl.js"></script>
+
+    <!--ZEN STRATEGY CONTROLLER DIFFERENT BETS-->
+    <script src="app/zen/ctrl.js"></script>
+
+    <!--BAISC STRATEGY CONTROLLER-->
+    <script src="app/basic/ctrl.js"></script>
+    <script src="app/basic/service.js"></script>
+
+    <!-- VISUALIZATION CONTROLLER -->
+    <script src="app/visualization/ctrl.js"></script>
+    <script src="app/visualization/service.js"></script>
+
+  </head>
+  <body ng-controller="MainCtrl">
+    <h1> Black Jack Visualizations </h1>
+  <div style="float:left; width: 25%">
+    <!--<h2> dumb strat </h2>-->
+    <!--<div ng-controller="NormalStrategyCtrl"-->
+      <!--ng-include="'app/normal/main.html'">-->
+    <!--</div>-->
+    <h2> Basic Strategy </h2>
+    <h4> Strategy that is optimal mathematically </h4>
+    <div ng-controller="BasicCtrl"
+      ng-include="'app/basic/main.html'">
+    </div>
+    <h2> High-Low Counting Strategy </h2>
+    <h4>Same as the basic strategy, except uses the High-Low Card counting system to bet different amounts of money </h4>
+    <div ng-controller="HighLowCtrl"
+      ng-include="'app/high_low/main.html'">
+    </div>
+    <h2> High-Low Counting Strategy 2</h2>
+    <h4>Same as the above, except betting is different </h4>
+    <div ng-controller="HighLowBetsCtrl"
+      ng-include="'app/high_low_bets/main.html'">
+    </div>
+    <h2> Zen Counting Strategy 2</h2>
+    <h4> More sophisticated counting strategy </h4>
+    <div ng-controller="ZenCtrl"
+      ng-include="'app/zen/main.html'">
+    </div>
+  </div>
+  <div style="float:left; width: 75%">
+    <div ng-controller="VisualizationCtrl"
+      ng-include="'app/visualization/main.html'">
+    </div>
+  </div>
+  </body>
+  </html>

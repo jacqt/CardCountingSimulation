@@ -1,0 +1,13 @@
+<center> <h2> Winnings of each strategy over time </h2> </center>
+
+<div>
+  <pre>
+  <!--{{ pretty_print() }}-->
+  </pre>
+  <canvas id="line" class="chart chart-line" data="data.chart.data"
+    labels="data.chart.labels" legend="true" series="data.chart.series"
+    options="options"
+    click="onClick">
+  </canvas>  
+  <button ng-click="reset()"> Reset me! </button>
+</div>
